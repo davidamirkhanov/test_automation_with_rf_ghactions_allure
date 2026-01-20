@@ -1,0 +1,5 @@
+.idea
+.robotcode_cache
+resources/env
+/log
+/results
