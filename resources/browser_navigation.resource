@@ -1,12 +1,10 @@
 *** Settings ***
-Library         dotenv
 Library         SeleniumLibrary
 Variables       ../resources/env/prod.yaml
 
 
 *** Variables ***
 ${BROWSER}=     Chrome
-${HEADLESS}=    False
 ${TIMEOUT}=     10s
 
 
@@ -14,4 +12,5 @@ ${TIMEOUT}=     10s
 
 Open Browser And Go To Site Under Test
     Open Browser    ${BASE_URL}    browser=${BROWSER}
+    Maximize Browser Window
     Set Selenium Timeout    ${TIMEOUT}
