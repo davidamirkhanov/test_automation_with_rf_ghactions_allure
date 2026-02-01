@@ -1,6 +1,6 @@
 .idea
 .robotcode_cache
-resources/env
+.env
 /log
 /results
 /venv

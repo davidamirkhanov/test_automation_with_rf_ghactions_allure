@@ -1,6 +1,5 @@
 *** Settings ***
 Resource        ../page.resource
-Resource        ../test_login_page/test_login_page.resource
 Variables       main_page.yaml
 Library         main_page_helper.py
 

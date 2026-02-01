@@ -1,11 +1,5 @@
 *** Settings ***
-Library         SeleniumLibrary
-Variables       ../resources/env/prod.yaml
-
-
-*** Variables ***
-${BROWSER}=     Chrome
-${TIMEOUT}=     10s
+Resource         general_settings.resource
 
 
 *** Keywords ***
