@@ -16,6 +16,10 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run tests
-        run: robot --pythonpath resources --outputdir results tests
+        run: |
+          robot --pythonpath resources \
+          --outputdir results \
+          --variable "BROWSER:Headless Chrome" \
+          tests
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
