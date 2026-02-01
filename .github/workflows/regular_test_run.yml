@@ -17,4 +17,5 @@ jobs:
 
       - name: Run tests
         run: robot --pythonpath resources --outputdir results tests
-        
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
