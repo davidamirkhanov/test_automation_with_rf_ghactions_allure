@@ -4,3 +4,4 @@ resources/env
 /log
 /results
 /venv
+*.pyc
