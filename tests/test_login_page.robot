@@ -1,6 +1,7 @@
 *** Settings ***
 Resource            ../resources/browser_navigation.resource
 Resource            ../resources/pages/main_page/main_page.resource
+Resource            ../resources/pages/test_login_page/test_login_page.resource
 
 Test Setup          Run Keywords    Open Browser And Go To Site Under Test
 Test Teardown       Close Browser

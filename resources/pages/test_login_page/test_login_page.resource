@@ -3,30 +3,32 @@ Resource        ../page.resource
 Resource        ../secure_page/secure_page.resource
 Library         ../test_login_page/test_login_page_helper.py
 Variables       test_login_page.yaml
-Variables       ../../env/prod.yaml
 Variables       ../../test_data.yaml
 
 
 *** Variables ***
 ${LOGIN_PAGE_HEADER}=       css=h1
-${USERNAME_FIELD}           css=input#username
-${PASSWORD_FIELD}           css=input#password
-${LOGIN_BUTTON}             css=button#submit-login
+${USERNAME_FIELD}=          css=input#username
+${PASSWORD_FIELD}=          css=input#password
+${LOGIN_BUTTON}=            css=button#submit-login
 
 
 *** Keywords ***
 Check That Login Page Is Opened
+    [Documentation]    Verifies that the login page is opened by checking the header and all required elements.
     Check Login Page Header
     Check Login Page Elements
 
 Check Login Page Header
+    [Documentation]    Verifies that the login page header is visible and displays the correct title text.
     Wait Until Element Is Visible    ${PAGE_HEADER}
     Element Text Should Be    ${LOGIN_PAGE_HEADER}    ${LOGIN_PAGE_TITLE_TEXT}
 
 Check Login Page Elements
-    Element Should Be Visible        ${USERNAME_FIELD}
-    Element Should Be Visible        ${PASSWORD_FIELD}
-    Element Should Be Visible        ${LOGIN_BUTTON}
+    [Documentation]    Verifies that all login page elements are visible.
+    Element Should Be Visible    ${USERNAME_FIELD}
+    Element Should Be Visible    ${PASSWORD_FIELD}
+    Element Should Be Visible    ${LOGIN_BUTTON}
 
 Login With Valid Credentials
     [Documentation]    Logs in using valid username and password credentials.
@@ -44,5 +46,7 @@ Login With Invalid Password
     Click Button    ${LOGIN_BUTTON}
 
 Check Login Error Message Is Displayed
+    [Documentation]    Verifies that the login error message is displayed with the
+    ...    correct invalid password message text.
     Wait Until Element Is Visible    ${BANNER}
     Element Text Should Be    ${BANNER}    ${INVALID_PASSWORD_MESSAGE_TEXT}
